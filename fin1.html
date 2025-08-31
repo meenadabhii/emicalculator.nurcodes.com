@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Financial Strategies - FIN1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_0',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_1',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_2',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(to right, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 25px 0 15px;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            font-size: 2.2rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body ul {
+            list-style-type: none;
+            margin: 15px 0;
+        }
+
+        .card-body li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-body li i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .card-footer {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .calculator {
+            background: linear-gradient(to right, #fdfcfb 0%, #e2d1c3 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .calculator h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .calc-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            outline: none;
+        }
+
+        .calc-result {
+            grid-column: span 2;
+            background: linear-gradient(to right, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 30px;
+            color: #ecf0f1;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .calc-form {
+                grid-template-columns: 1fr;
+            }
+
+            .calc-result {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-table th {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .info-table tr:hover {
+            background-color: #ebf5fb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Advanced Financial Strategies</h1>
+            <p>Expert insights and tools for financial growth and security</p>
+
+            <!-- ads  -->
+            <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+            </div>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+        </div>
+
+        <div class="content">
+            <!-- Investment Strategies -->
+            <div class="section">
+                <h2>Investment Strategies</h2>
+                <p>Maximize your returns with these proven investment approaches tailored for long-term growth and
+                    stability.</p>
+
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">Diversification</div>
+                        <div class="card-body">
+                            <p>Spread your investments across different asset classes to reduce risk.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Stocks across sectors</li>
+                                <li><i class="fas fa-check-circle"></i> Bonds with varying maturities</li>
+                                <li><i class="fas fa-check-circle"></i> Real estate investments</li>
+                                <li><i class="fas fa-check-circle"></i> International exposure</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Risk Management
+                        </div>
+                    </div>
+                    <!-- ads units  -->
+
+                    <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                        <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Growth Investing</div>
+                        <div class="card-body">
+                            <p>Focus on companies that offer strong potential for earnings growth.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Technology sector focus</li>
+                                <li><i class="fas fa-check-circle"></i> Emerging market opportunities</li>
+                                <li><i class="fas fa-check-circle"></i> Innovation-driven companies</li>
+                                <li><i class="fas fa-check-circle"></i> Higher risk, higher reward</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Long-Term Growth
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Value Investing</div>
+                        <div class="card-body">
+                            <p>Identify undervalued stocks that trade for less than their intrinsic value.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Fundamental analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Margin of safety</li>
+                                <li><i class="fas fa-check-circle"></i> Contrarian approach</li>
+                                <li><i class="fas fa-check-circle"></i> Patient capital</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Undervalued Opportunities
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retirement Planning -->
+            <div class="section">
+                <h2>Retirement Planning</h2>
+                <p>Ensure a comfortable retirement with these strategic approaches to saving and investing for your
+                    future.</p>
+
+                <div class="calculator">
+                    <h3>Retirement Savings Calculator</h3>
+                    <div class="calc-form">
+                        <div class="form-group">
+                            <label for="current-age">Current Age</label>
+                            <input type="number" id="current-age" value="35" min="18" max="65">
+                        </div>
+                        <div class="form-group">
+                            <label for="retirement-age">Desired Retirement Age</label>
+                            <input type="number" id="retirement-age" value="65" min="40" max="75">
+                        </div>
+                        <div class="form-group">
+                            <label for="current-savings">Current Retirement Savings ($)</label>
+                            <input type="number" id="current-savings" value="100000">
+                        </div>
+                        <div class="form-group">
+                            <label for="annual-contribution">Annual Contribution ($)</label>
+                            <input type="number" id="annual-contribution" value="10000">
+                        </div>
+                        <div class="calc-result" id="retirement-result">
+                            Projected Retirement Savings: $1,203,284.60
+                        </div>
+                    </div>
+                </div>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Account Type</th>
+                            <th>Contribution Limit</th>
+                            <th>Tax Advantage</th>
+                            <th>Withdrawal Rules</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>401(k)</td>
+                            <td>$22,500</td>
+                            <td>Tax-deferred growth</td>
+                            <td>Penalty before 59½</td>
+                        </tr>
+                        <tr>
+                            <td>IRA</td>
+                            <td>$6,500</td>
+                            <td>Tax-deferred or tax-free</td>
+                            <td>Penalty before 59½</td>
+                        </tr>
+                        <tr>
+                            <td>Roth IRA</td>
+                            <td>$6,500</td>
+                            <td>Tax-free growth</td>
+                            <td>Contributions anytime</td>
+                        </tr>
+                        <tr>
+                            <td>HSA</td>
+                            <td>$3,850</td>
+                            <td>Triple tax advantage</td>
+                            <td>Medical expenses anytime</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tax Optimization -->
+            <div class="section">
+                <h2>Tax Optimization Strategies</h2>
+                <p>Legally minimize your tax burden and keep more of your hard-earned money with these strategies.</p>
+
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">Tax-Loss Harvesting</div>
+                        <div class="card-body">
+                            <p>Sell investments at a loss to offset capital gains and reduce taxable income.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Offset up to $3,000 in ordinary income</li>
+                                <li><i class="fas fa-check-circle"></i> Carry forward unused losses</li>
+                                <li><i class="fas fa-check-circle"></i> Maintain similar market exposure</li>
+                                <li><i class="fas fa-check-circle"></i> Avoid wash sale rules</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Capital Gains Management
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Asset Location</div>
+                        <div class="card-body">
+                            <p>Place investments in the most tax-efficient accounts based on their characteristics.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Bonds in tax-deferred accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Stocks in taxable accounts</li>
+                                <li><i class="fas fa-check-circle"></i> REITs in tax-advantaged accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Tax-efficient funds in taxable accounts</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Tax Efficiency
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Retirement Contributions</div>
+                        <div class="card-body">
+                            <p>Maximize contributions to tax-advantaged retirement accounts.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> 401(k) employer match</li>
+                                <li><i class="fas fa-check-circle"></i> IRA deductions</li>
+                                <li><i class="fas fa-check-circle"></i> Health Savings Accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Catch-up contributions at 50+</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Tax-Advantaged Growth
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Estate Planning -->
+            <div class="section">
+                <h2>Estate Planning Essentials</h2>
+                <p>Protect your assets and ensure your wishes are carried out with proper estate planning.</p>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Purpose</th>
+                            <th>Considerations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Will</td>
+                            <td>Distribute assets after death</td>
+                            <td>Name executor and guardians</td>
+                        </tr>
+                        <tr>
+                            <td>Trust</td>
+                            <td>Avoid probate, control distributions</td>
+                            <td>Revocable vs. irrevocable</td>
+                        </tr>
+                        <tr>
+                            <td>Power of Attorney</td>
+                            <td>Manage finances if incapacitated</td>
+                            <td>Durable vs. springing</td>
+                        </tr>
+                        <tr>
+                            <td>Healthcare Directive</td>
+                            <td>Medical decisions if unable</td>
+                            <td>End-of-life preferences</td>
+                        </tr>
+                        <tr>
+                            <td>Beneficiary Designations</td>
+                            <td>Transfer assets outside probate</td>
+                            <td>Review regularly</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 Financial Education Portal | Privacy Policy | Terms of Service</p>
+            <p>FIN1 - Advanced Financial Strategies</p>
+        </div>
+    </div>
+
+    <script>
+        // Retirement calculator
+        const currentAgeInput = document.getElementById('current-age');
+        const retirementAgeInput = document.getElementById('retirement-age');
+        const currentSavingsInput = document.getElementById('current-savings');
+        const annualContributionInput = document.getElementById('annual-contribution');
+        const retirementResultDiv = document.getElementById('retirement-result');
+
+        // Update calculator when inputs change
+        [currentAgeInput, retirementAgeInput, currentSavingsInput, annualContributionInput].forEach(input => {
+            input.addEventListener('input', calculateRetirement);
+        });
+
+        function calculateRetirement() {
+            const currentAge = parseFloat(currentAgeInput.value);
+            const retirementAge = parseFloat(retirementAgeInput.value);
+            const currentSavings = parseFloat(currentSavingsInput.value);
+            const annualContribution = parseFloat(annualContributionInput.value);
+            const annualReturn = 0.07; // 7% annual return
+
+            if (retirementAge <= currentAge) {
+                retirementResultDiv.textContent = "Retirement age must be greater than current age";
+                return;
+            }
+
+            const yearsToRetirement = retirementAge - currentAge;
+            let futureValue = currentSavings;
+
+            // Calculate future value with annual contributions
+            for (let i = 0; i < yearsToRetirement; i++) {
+                futureValue = futureValue * (1 + annualReturn) + annualContribution;
+            }
+
+            // Update result
+            retirementResultDiv.textContent = `Projected Retirement Savings: $${futureValue.toFixed(2)}`;
+        }
+
+        // Initialize calculator
+        calculateRetirement();
+    </script>
+
+    <!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            alert('Right-click is disabled to protect our content.');
+        });
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function (e) {
+            if (
+                (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+                e.key === 'F12' ||
+                (e.metaKey && e.altKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                alert('Access to developer tools and source code is disabled to protect our content.');
+                return false;
+            }
+            return true;
+        };
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_2', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    
+    <script>
+        (function () {
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM fully loaded.");
+
+                function showRewardedAd() {
+                    if (!window.googletag || !googletag.cmd) {
+                        console.error("Google Ad Manager is not properly initialized.");
+                        return;
+                    }
+                    // reward ads
+                    googletag.cmd.push(function () {
+                        try {
+                            const rewardedSlot = googletag
+                                .defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_3', googletag.enums.OutOfPageFormat.REWARDED)
+                                .addService(googletag.pubads());
+
+                            googletag.enableServices();
+                            googletag.display(rewardedSlot);
+                            console.log("Attempting to display rewarded ad...");
+
+                            googletag.pubads().addEventListener("rewardedSlotReady", function (evt) {
+                                console.log("Rewarded ad ready.");
+                                evt.makeRewardedVisible();
+                            });
+
+                            googletag.pubads().addEventListener("rewardedSlotClosed", function () {
+                                console.log("Ad closed.");
+                                googletag.destroySlots([rewardedSlot]);
+                            });
+                        } catch (error) {
+                            console.error("Error during ad setup:", error);
+                        }
+                    });
+                }
+
+                // Add 2-second delay before showing the rewarded ad
+                setTimeout(function () {
+                    console.log("2 seconds elapsed, showing rewarded ad...");
+                    showRewardedAd();
+                }, 2000); // 2000 milliseconds = 2 seconds
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

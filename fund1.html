@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Financial Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_0',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_1',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_2',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .character {
+            position: absolute;
+            bottom: 0;
+            right: 30px;
+            font-size: 120px;
+            opacity: 0.8;
+            transform: translateY(15px);
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(15px);
+            }
+
+            to {
+                transform: translateY(-5px);
+            }
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px;
+            background: #f8f9fa;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 180px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #42e695 0%, #3bb2b8 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #6a11cb;
+            font-size: 2.2rem;
+            display: inline-block;
+        }
+
+        .calculator {
+            background: linear-gradient(to right, #fdfcfb 0%, #e2d1c3 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .calculator:hover {
+            transform: translateY(-5px);
+        }
+
+        .calculator h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .calc-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+            outline: none;
+        }
+
+        .calc-result {
+            grid-column: span 2;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-container {
+            background: linear-gradient(to right, #fdfbfb 0%, #ebedee 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .quiz-container h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .quiz-question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #e9ecef;
+        }
+
+        .quiz-question h4 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .option {
+            padding: 15px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .option:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+        }
+
+        .option.selected {
+            border-color: #42e695;
+            background: #f0fffa;
+            box-shadow: 0 5px 15px rgba(66, 230, 149, 0.1);
+        }
+
+        .option i {
+            font-size: 1.5rem;
+            color: #42e695;
+        }
+
+        .interactive-content {
+            background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .interactive-content h3 {
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 30px;
+            color: #ecf0f1;
+            font-size: 1rem;
+            text-align: center;
+            border-top: 5px solid #6a11cb;
+        }
+
+        @media (max-width: 768px) {
+
+            .options,
+            .calc-form {
+                grid-template-columns: 1fr;
+            }
+
+            .calc-result {
+                grid-column: span 1;
+            }
+
+            .character {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .game-container {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .game-cell {
+            background: linear-gradient(to right, #42e695 0%, #3bb2b8 100%);
+            height: 70px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-cell:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-cell.selected {
+            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+            transform: scale(1.1);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            margin: 30px 0;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #42e695 0%, #3bb2b8 100%);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .reward {
+            text-align: center;
+            margin-top: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .reward i {
+            font-size: 4rem;
+            color: #ffd700;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Youth Financial Adventure</h1>
+            <p>Learn about money in a fun way! Play games, take quizzes, and become a money master!</p>
+            <div class="character">🧒</div>
+        </div>
+        <!-- ads  -->
+        <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+            <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+        </div>
+        <div class="nav-buttons">
+            <a href="finance.html" class="btn btn-primary">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="fin1.html" class="btn btn-primary">
+                <i class="fas fa-chart-line"></i> Finance
+            </a>
+            <a href="fund1.html" class="btn btn-secondary">
+                <i class="fas fa-piggy-bank"></i> FUND
+            </a>
+        </div>
+
+        <div class="content">
+            <!-- Financial Calculator -->
+            <div class="section">
+                <h2>Fun Financial Calculators</h2>
+
+                <div class="calculator">
+                    <h3>Allowance Calculator</h3>
+                    <div class="calc-form">
+                        <div class="form-group">
+                            <label for="allowance"><i class="fas fa-money-bill-wave"></i> Weekly Allowance ($)</label>
+                            <input type="number" id="allowance" value="10" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="save-percent"><i class="fas fa-piggy-bank"></i> Save Percentage (%)</label>
+                            <input type="number" id="save-percent" value="20" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="spend-percent"><i class="fas fa-shopping-cart"></i> Spend Percentage (%)</label>
+                            <input type="number" id="spend-percent" value="50" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="weeks"><i class="fas fa-calendar-alt"></i> Number of Weeks</label>
+                            <input type="number" id="weeks" value="52" min="1" max="100">
+                        </div>
+                        <div class="calc-result" id="allowance-result">
+                            Yearly Savings: $104.00
+                        </div>
+                    </div>
+                </div>
+                <!-- ads units  -->
+                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+                </div>
+
+                <div class="calculator">
+                    <h3>Goal Savings Calculator</h3>
+                    <div class="calc-form">
+                        <div class="form-group">
+                            <label for="goal-amount"><i class="fas fa-bullseye"></i> Goal Amount ($)</label>
+                            <input type="number" id="goal-amount" value="500" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="weekly-save"><i class="fas fa-coins"></i> Weekly Savings ($)</label>
+                            <input type="number" id="weekly-save" value="15" min="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="current-save"><i class="fas fa-wallet"></i> Current Savings ($)</label>
+                            <input type="number" id="current-save" value="100" min="0">
+                        </div>
+                        <div class="calc-result" id="goal-result">
+                            Time to Reach Goal: 27 weeks
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+            <div class="section">
+                <h2>Financial Knowledge Quest</h2>
+
+                <div class="quiz-container">
+                    <h3>Test Your Money Knowledge</h3>
+
+                    <div class="progress-container">
+                        <div class="progress-bar" id="quiz-progress"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>1. What is the best way to manage your allowance?</h4>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Spend it all immediately
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-check-circle"></i> Save some, spend some, give some
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Hide it under your mattress
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Only use it for video games
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>2. Why is saving money important?</h4>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-check-circle"></i> To have money for future goals
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> To impress your friends
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Because parents say so
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> There's no good reason
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>3. What is a budget?</h4>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-check-circle"></i> A plan for how to spend your money
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> A type of bank account
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> A fancy word for savings
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> A restriction on spending
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>4. What does "interest" mean in savings?</h4>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-check-circle"></i> Money the bank pays you for keeping your money with
+                                them
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> How interested you are in saving
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> A fee for having a savings account
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Something boring adults talk about
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h4>5. What is the first thing you should do with money you receive?</h4>
+                        <div class="options">
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-check-circle"></i> Set aside some for saving
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Spend it all right away
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Compare how much you got to friends
+                            </div>
+                            <div class="option" onclick="selectOption(this)">
+                                <i class="fas fa-times-circle"></i> Put it in your pocket and forget about it
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary" onclick="submitQuiz()" style="margin-top: 20px;">
+                        <i class="fas fa-paper-plane"></i> Submit Quiz
+                    </button>
+
+                    <div class="reward">
+                        <i class="fas fa-trophy"></i>
+                        <p>Earn badges by completing quizzes!</p>
+                        <div>
+                            <span class="badge">Money Master</span>
+                            <span class="badge">Savings Star</span>
+                            <span class="badge">Budget Boss</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Content -->
+            <div class="section">
+                <h2>Interactive Learning Games</h2>
+
+                <div class="interactive-content">
+                    <h3>Savings Goal Adventure</h3>
+                    <p>Select the right answers to reach your savings goal! Each correct answer moves you closer to the
+                        treasure!</p>
+
+                    <div class="game-container">
+                        <div class="game-board">
+                            <div class="game-cell" onclick="selectGameCell(this)">$1</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">$5</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">$10</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">$20</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">$50</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">Save</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">Spend</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">Share</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">Goal</div>
+                            <div class="game-cell" onclick="selectGameCell(this)">Interest</div>
+                        </div>
+
+                        <div style="margin-top: 30px;">
+                            <button class="btn btn-primary" onclick="checkGame()">
+                                <i class="fas fa-check"></i> Check Answers
+                            </button>
+                            <button class="btn btn-secondary" onclick="resetGame()">
+                                <i class="fas fa-redo"></i> Start Over
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2023 Financial Education Portal | Privacy Policy | Terms of Service</p>
+            <p>Designed especially for young learners to develop good money habits early!</p>
+        </div>
+    </div>
+
+    <script>
+        // Navigation function
+
+
+        // Quiz selection
+        function selectOption(element) {
+            // Remove selected class from siblings
+            const siblings = element.parentElement.children;
+            for (let sibling of siblings) {
+                sibling.classList.remove('selected');
+            }
+
+            // Add selected class to clicked element
+            element.classList.add('selected');
+
+            // Update progress bar
+            updateProgress();
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const questions = document.querySelectorAll('.quiz-question');
+            let answered = 0;
+
+            questions.forEach(question => {
+                const options = question.querySelectorAll('.option');
+                let hasSelected = false;
+
+                options.forEach(option => {
+                    if (option.classList.contains('selected')) {
+                        hasSelected = true;
+                    }
+                });
+
+                if (hasSelected) answered++;
+            });
+
+            const progress = (answered / questions.length) * 100;
+            document.getElementById('quiz-progress').style.width = `${progress}%`;
+        }
+
+        // Quiz submission
+        function submitQuiz() {
+            alert('Quiz submitted! Calculating your score...');
+            // In a real implementation, this would calculate score and redirect
+            setTimeout(() => {
+                alert('Awesome! You scored 100%! You\'re a Money Master!');
+            }, 1500);
+        }
+
+        // Allowance calculator
+        const allowanceInput = document.getElementById('allowance');
+        const savePercentInput = document.getElementById('save-percent');
+        const spendPercentInput = document.getElementById('spend-percent');
+        const weeksInput = document.getElementById('weeks');
+        const allowanceResultDiv = document.getElementById('allowance-result');
+
+        // Update calculator when inputs change
+        [allowanceInput, savePercentInput, spendPercentInput, weeksInput].forEach(input => {
+            input.addEventListener('input', calculateAllowance);
+        });
+
+        function calculateAllowance() {
+            const allowance = parseFloat(allowanceInput.value);
+            const savePercent = parseFloat(savePercentInput.value) / 100;
+            const spendPercent = parseFloat(spendPercentInput.value) / 100;
+            const weeks = parseFloat(weeksInput.value);
+
+            if (savePercent + spendPercent > 100) {
+                allowanceResultDiv.textContent = "Total percentage cannot exceed 100%";
+                return;
+            }
+
+            const yearlySavings = allowance * savePercent * weeks;
+            const yearlySpending = allowance * spendPercent * weeks;
+            const yearlySharing = allowance * (1 - (savePercent + spendPercent)) * weeks;
+
+            // Update result
+            allowanceResultDiv.innerHTML = `
+                Yearly Savings: $${yearlySavings.toFixed(2)}<br>
+                Yearly Spending: $${yearlySpending.toFixed(2)}<br>
+                Yearly Sharing: $${yearlySharing.toFixed(2)}
+            `;
+        }
+
+        // Goal calculator
+        const goalAmountInput = document.getElementById('goal-amount');
+        const weeklySaveInput = document.getElementById('weekly-save');
+        const currentSaveInput = document.getElementById('current-save');
+        const goalResultDiv = document.getElementById('goal-result');
+
+        // Update calculator when inputs change
+        [goalAmountInput, weeklySaveInput, currentSaveInput].forEach(input => {
+            input.addEventListener('input', calculateGoal);
+        });
+
+        function calculateGoal() {
+            const goalAmount = parseFloat(goalAmountInput.value);
+            const weeklySave = parseFloat(weeklySaveInput.value);
+            const currentSave = parseFloat(currentSaveInput.value);
+
+            if (weeklySave <= 0) {
+                goalResultDiv.textContent = "Weekly savings must be greater than 0";
+                return;
+            }
+
+            const remaining = goalAmount - currentSave;
+            const weeksNeeded = Math.ceil(remaining / weeklySave);
+
+            // Update result
+            goalResultDiv.textContent = `Time to Reach Goal: ${weeksNeeded} weeks`;
+        }
+
+        // Game functionality
+        function selectGameCell(element) {
+            element.classList.toggle('selected');
+        }
+
+        function checkGame() {
+            const selectedCells = document.querySelectorAll('.game-cell.selected');
+            if (selectedCells.length >= 3) {
+                alert('Great job! You selected the right answers! You earned 50 coins!');
+            } else {
+                alert('Try selecting a few more answers to complete the challenge!');
+            }
+        }
+
+        function resetGame() {
+            const cells = document.querySelectorAll('.game-cell');
+            cells.forEach(cell => {
+                cell.classList.remove('selected');
+            });
+            alert('Game reset! Try again!');
+        }
+
+        // Initialize calculators
+        calculateAllowance();
+        calculateGoal();
+    </script>
+
+    <!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            alert('Right-click is disabled to protect our content.');
+        });
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function (e) {
+            if (
+                (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+                e.key === 'F12' ||
+                (e.metaKey && e.altKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                alert('Access to developer tools and source code is disabled to protect our content.');
+                return false;
+            }
+            return true;
+        };
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_2', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+
+    <script>
+        (function () {
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM fully loaded.");
+
+                function showRewardedAd() {
+                    if (!window.googletag || !googletag.cmd) {
+                        console.error("Google Ad Manager is not properly initialized.");
+                        return;
+                    }
+                    // reward ads
+                    googletag.cmd.push(function () {
+                        try {
+                            const rewardedSlot = googletag
+                                .defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_3', googletag.enums.OutOfPageFormat.REWARDED)
+                                .addService(googletag.pubads());
+
+                            googletag.enableServices();
+                            googletag.display(rewardedSlot);
+                            console.log("Attempting to display rewarded ad...");
+
+                            googletag.pubads().addEventListener("rewardedSlotReady", function (evt) {
+                                console.log("Rewarded ad ready.");
+                                evt.makeRewardedVisible();
+                            });
+
+                            googletag.pubads().addEventListener("rewardedSlotClosed", function () {
+                                console.log("Ad closed.");
+                                googletag.destroySlots([rewardedSlot]);
+                            });
+                        } catch (error) {
+                            console.error("Error during ad setup:", error);
+                        }
+                    });
+                }
+
+                // Add 2-second delay before showing the rewarded ad
+                setTimeout(function () {
+                    console.log("2 seconds elapsed, showing rewarded ad...");
+                    showRewardedAd();
+                }, 2000); // 2000 milliseconds = 2 seconds
+            });
+        })();
+    </script>
+
+
+</body>
+
+</html>

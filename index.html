@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Education Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        (function () {
+            // Initialize googletag if not already defined
+            window.googletag = window.googletag || { cmd: [] };
+
+            // Ad slot variables
+            let adSlot1, adSlot2, anchorSlot;
+            const refreshInterval = 30000; // 30 seconds - more user-friendly refresh rate
+            let refreshTimer;
+
+            // Function to set up ads
+            function setupAds() {
+                googletag.cmd.push(function () {
+                    // Setup PubAds
+                    const pubads = googletag.pubads();
+                    pubads.enableSingleRequest();
+                    pubads.setCentering(true);
+
+                    // Apply geotargeting if available
+                    if (window.geoTarget) {
+                        pubads.setLocation(window.geoTarget);
+                    }
+
+                    // Define Ad Slots with consistent IDs
+                    adSlot1 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_0',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-1'
+                    ).addService(pubads);
+
+                    adSlot2 = googletag.defineSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_1',
+                        [[300, 250], [320, 480], [250, 250], [300, 100], 'fluid', [336, 280]],
+                        'ad-slot-2'
+                    ).addService(pubads);
+
+                    // Define anchor ad with proper ID
+                    anchorSlot = googletag.defineOutOfPageSlot(
+                        '/22792691312,23308311652/web_nurcodes.com_display_banner_2',
+                        googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+                    );
+
+                    if (anchorSlot) {
+                        anchorSlot.addService(pubads);
+                        // Use the correct ID for the anchor ad
+                        anchorSlot.setElementId('ad-anchor-slot');
+                    }
+
+                    // Event listeners for ad loading
+                    pubads.addEventListener('slotRenderEnded', function (event) {
+                        // Handle ad render events if needed
+                        const slotId = event.slot.getSlotElementId();
+                        const isEmpty = event.isEmpty;
+
+                        // Example: hide containers with no ads
+                        if (isEmpty && document.getElementById(slotId)) {
+                            document.getElementById(slotId).style.display = 'none';
+                        }
+                    });
+
+                    // Enable services
+                    googletag.enableServices();
+
+                    // Display ads
+                    try {
+                        if (document.getElementById('ad-slot-1')) {
+                            googletag.display('ad-slot-1');
+                        }
+                        if (document.getElementById('ad-slot-2')) {
+                            googletag.display('ad-slot-2');
+                        }
+                        if (document.getElementById('ad-anchor-slot')) {
+                            googletag.display('ad-anchor-slot');
+                        }
+                    } catch (error) {
+                        console.log('Error displaying ads:', error);
+                    }
+
+                    // Set up periodic refresh with error handling
+                    setupAdRefresh();
+                });
+            }
+
+            // Function to handle ad refresh
+            function setupAdRefresh() {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+
+                refreshTimer = setInterval(function () {
+                    try {
+                        // Only refresh if slots exist and are defined
+                        const slotsToRefresh = [];
+                        if (adSlot1) slotsToRefresh.push(adSlot1);
+                        if (adSlot2) slotsToRefresh.push(adSlot2);
+
+                        if (slotsToRefresh.length > 0) {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().refresh(slotsToRefresh);
+                            });
+                        }
+                    } catch (error) {
+                        console.log('Error refreshing ads:', error);
+                        clearInterval(refreshTimer); // Stop trying on persistent errors
+                    }
+                }, refreshInterval);
+            }
+
+            // Check for ad blockers (simple detection)
+            function checkAdBlocker() {
+                const testAd = document.createElement('div');
+                testAd.innerHTML = '&nbsp;';
+                testAd.className = 'adsbox';
+                document.body.appendChild(testAd);
+
+                setTimeout(function () {
+                    if (testAd.offsetHeight === 0) {
+                        console.log('Ad blocker detected');
+                        // You can show a message to users or implement fallback content
+                    }
+                    document.body.removeChild(testAd);
+                }, 100);
+            }
+
+            // Initialize ads when DOM is ready
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                setupAds();
+                checkAdBlocker();
+            } else {
+                document.addEventListener('DOMContentLoaded', function () {
+                    setupAds();
+                    checkAdBlocker();
+                });
+            }
+
+            // Clean up on page unload
+            window.addEventListener('beforeunload', function () {
+                if (refreshTimer) {
+                    clearInterval(refreshTimer);
+                }
+            });
+        })();
+
+    </script>
+
+    <style>
+        #banner-ad {
+            width: 100%;
+            max-width: 425px;
+            margin: 1rem auto 0.5rem;
+            padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
+            box-shadow: 0 4px 15px var(--shadow-dark);
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            border: 1px solid var(--accent-gold);
+        }
+
+        #banner-ad::before {
+            content: "Advertisement";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 0 8px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .ad-divider {
+            width: 90%;
+            max-width: 425px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 0.5rem auto;
+        }
+    </style>
+
+
+
+    <!-- and ads -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a4c8c, #0a2c5c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .header {
+            background: linear-gradient(to right, #1a4c8c, #0a2c5c);
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .age-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .age-btn {
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-adult {
+            background: linear-gradient(to bottom, #1a4c8c, #0a2c5c);
+            color: white;
+        }
+
+        .btn-minor {
+            background: linear-gradient(to bottom, #FF8C00, #FF6B00);
+            color: white;
+        }
+
+        .age-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .age-btn i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            background: #f0f8ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border-left: 4px solid #FF8C00;
+        }
+
+        .description h2 {
+            color: #1a4c8c;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .description p {
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .feature {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-top: 3px solid #1a4c8c;
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: #1a4c8c;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background: #0a2c5c;
+            color: white;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Content Pages */
+        .page {
+            display: none;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .page h2 {
+            color: #1a4c8c;
+            margin: 20px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FF8C00;
+        }
+
+        .calculator {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #1a4c8c;
+        }
+
+        .calculator input,
+        .calculator select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .calculator button {
+            background: #1a4c8c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .calculator button:hover {
+            background: #0a2c5c;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            display: none;
+            border-left: 3px solid #FF8C00;
+        }
+
+        .quiz-container {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #1a4c8c;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .quiz-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quiz-option {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .quiz-option:hover {
+            background: #1a4c8c;
+            color: white;
+        }
+
+        .code-container {
+            background: #2d3a4b;
+            color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .expand-btn {
+            background: #FF8C00;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .code-content {
+            display: none;
+        }
+
+        .code-content.expanded {
+            display: block;
+        }
+
+        .back-btn {
+            background: #FF8C00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #e67e00;
+        }
+
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f0f8ff;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab.active {
+            background: #1a4c8c;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 3px solid #1a4c8c;
+        }
+
+        .info-card h3 {
+            color: #1a4c8c;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            line-height: 1.6;
+        }
+
+        .tip-box {
+            background: #FFF4E6;
+            border-left: 4px solid #FF8C00;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #f0f8ff;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #FF8C00;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .age-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .age-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-container {
+                flex-wrap: wrap;
+            }
+
+            .tab {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Age Verification Page -->
+        <div id="age-verification">
+            <div class="header">
+                <h1>Financial Education Portal</h1>
+                <p>Select your age group to access appropriate financial content</p>
+            </div>
+            <!-- ads  -->
+            <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+            </div>
+            <div class="content">
+                <div class="content">
+                    <div class="age-options">
+                        <button class="age-btn btn-adult" onclick="window.location.href='finance.html'">
+                            <i class="fas fa-user-check"></i>
+                            18+ Adult Content
+                        </button>
+                        <button class="age-btn btn-minor" onclick="window.location.href='fund.html'">
+                            <i class="fas fa-user-graduate"></i>
+                            Under 18 Content
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="description">
+                    <h2>What You'll Find Inside</h2>
+                    <p>• Interactive financial calculators and tools</p>
+                    <p>• Engaging quizzes to test your knowledge</p>
+                    <p>• Expandable code examples for learning programming concepts</p>
+                    <p>• Visualizations of financial concepts</p>
+                    <p>• Age-appropriate financial lessons</p>
+                    <p>• Budgeting guides and investment strategies</p>
+                    <p>• Debt management resources</p>
+                </div>
+                <!-- ads units  -->
+
+                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-calculator"></i>
+                        <p>Calculators</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Charts</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <p>Quizzes</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-code"></i>
+                        <p>Code Examples</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-book"></i>
+                        <p>Guides</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>Lessons</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script>
+        // Show/hide pages
+        function showPage(pageId) {
+            document.getElementById('age-verification').style.display = 'none';
+            document.getElementById('adult-page').style.display = 'none';
+            document.getElementById('minor-page').style.display = 'none';
+
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        // Switch between tabs
+        function switchTab(event, tabId) {
+            // Remove active class from all tabs in this container
+            const tabs = event.currentTarget.parentElement.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Add active class to clicked tab
+            event.currentTarget.classList.add('active');
+
+            // Hide all tab content in this section
+            const tabContents = event.currentTarget.parentElement.parentElement.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Compound interest calculator for adult page
+        function calculateCompoundInterest(page) {
+            const principal = parseFloat(document.getElementById(`principal-${page}`).value);
+            const rate = parseFloat(document.getElementById(`rate-${page}`).value) / 100;
+            const time = parseFloat(document.getElementById(`time-${page}`).value);
+            const compound = parseInt(document.getElementById(`compound-${page}`).value);
+
+            const amount = principal * Math.pow(1 + (rate / compound), compound * time);
+            const interest = amount - principal;
+
+            document.getElementById(`result-${page}`).innerHTML = `
+                <p>Total Value: $${amount.toFixed(2)}</p>
+                <p>Interest Earned: $${interest.toFixed(2)}</p>
+            `;
+            document.getElementById(`result-${page}`).style.display = 'block';
+        }
+
+        // Savings calculator for minor page
+        function calculateSavings() {
+            const allowance = parseFloat(document.getElementById('allowance').value);
+            const savePercent = parseFloat(document.getElementById('save-percent').value) / 100;
+            const weeks = parseFloat(document.getElementById('weeks').value);
+
+            const weeklySave = allowance * savePercent;
+            const totalSaved = weeklySave * weeks;
+
+            document.getElementById('savings-result').innerHTML = `
+                <p>You will save $${weeklySave.toFixed(2)} per week</p>
+                <p>After ${weeks} weeks, you'll have $${totalSaved.toFixed(2)}</p>
+            `;
+            document.getElementById('savings-result').style.display = 'block';
+        }
+
+        // Debt paydown calculator
+        function calculateDebtPaydown() {
+            const debt = parseFloat(document.getElementById('debt-amount').value);
+            const interestRate = parseFloat(document.getElementById('debt-interest').value) / 100 / 12;
+            const monthlyPayment = parseFloat(document.getElementById('monthly-payment').value);
+
+            if (monthlyPayment <= debt * interestRate) {
+                document.getElementById('debt-result').innerHTML =
+                    "<p>Your payment is too low to pay off the debt. Please increase your monthly payment.</p>";
+                document.getElementById('debt-result').style.display = 'block';
+                return;
+            }
+
+            let balance = debt;
+            let months = 0;
+            let totalInterest = 0;
+
+            while (balance > 0) {
+                const interest = balance * interestRate;
+                const principal = monthlyPayment - interest;
+
+                balance -= principal;
+                totalInterest += interest;
+                months++;
+
+                if (months > 600) { // Prevent infinite loop
+                    document.getElementById('debt-result').innerHTML =
+                        "<p>This debt would take more than 50 years to pay off. Consider increasing your monthly payment.</p>";
+                    document.getElementById('debt-result').style.display = 'block';
+                    return;
+                }
+            }
+
+            const years = Math.floor(months / 12);
+            const remainingMonths = months % 12;
+
+            document.getElementById('debt-result').innerHTML = `
+                <p>Time to pay off: ${years} years and ${remainingMonths} months</p>
+                <p>Total interest paid: $${totalInterest.toFixed(2)}</p>
+            `;
+            document.getElementById('debt-result').style.display = 'block';
+        }
+
+        // Mortgage calculator
+        function calculateMortgage() {
+            const loanAmount = parseFloat(document.getElementById('loan-amount').value);
+            const interestRate = parseFloat(document.getElementById('loan-interest').value) / 100 / 12;
+            const loanTerm = parseFloat(document.getElementById('loan-term').value) * 12;
+
+            const monthlyPayment = loanAmount *
+                (interestRate * Math.pow(1 + interestRate, loanTerm)) /
+                (Math.pow(1 + interestRate, loanTerm) - 1);
+
+            const totalPayment = monthlyPayment * loanTerm;
+            const totalInterest = totalPayment - loanAmount;
+
+            document.getElementById('mortgage-result').innerHTML = `
+                <p>Monthly Payment: $${monthlyPayment.toFixed(2)}</p>
+                <p>Total of ${loanTerm} Payments: $${totalPayment.toFixed(2)}</p>
+                <p>Total Interest: $${totalInterest.toFixed(2)}</p>
+            `;
+            document.getElementById('mortgage-result').style.display = 'block';
+        }
+
+        // Budget calculator based on 50/30/20 rule
+        function calculateBudget() {
+            const income = parseFloat(document.getElementById('monthly-income').value);
+
+            const needs = income * 0.5;
+            const wants = income * 0.3;
+            const savings = income * 0.2;
+
+            document.getElementById('budget-result').innerHTML = `
+                <p><strong>Based on the 50/30/20 budgeting rule:</strong></p>
+                <p>Needs (50%): $${needs.toFixed(2)}</p>
+                <p>Wants (30%): $${wants.toFixed(2)}</p>
+                <p>Savings/Debt (20%): $${savings.toFixed(2)}</p>
+            `;
+            document.getElementById('budget-result').style.display = 'block';
+        }
+
+        // Debt-to-income ratio calculator
+        function calculateDTI() {
+            const monthlyDebt = parseFloat(document.getElementById('monthly-debt').value);
+            const grossIncome = parseFloat(document.getElementById('gross-income').value);
+
+            const dti = (monthlyDebt / grossIncome) * 100;
+
+            let message = "";
+            if (dti <= 20) {
+                message = "Excellent! Your debt-to-income ratio is low.";
+            } else if (dti <= 36) {
+                message = "Good. Most lenders will view this ratio favorably.";
+            } else if (dti <= 43) {
+                message = "Fair. You might want to work on reducing your debt.";
+            } else {
+                message = "High. You may have difficulty getting approved for loans.";
+            }
+
+            document.getElementById('dti-result').innerHTML = `
+                <p>Your Debt-to-Income Ratio: ${dti.toFixed(1)}%</p>
+                <p>${message}</p>
+            `;
+            document.getElementById('dti-result').style.display = 'block';
+        }
+
+        // Allowance budget calculator for minors
+        function calculateAllowanceBudget() {
+            const allowance = parseFloat(document.getElementById('weekly-allowance').value);
+
+            const spending = allowance * 0.5;
+            const saving = allowance * 0.3;
+            const giving = allowance * 0.2;
+
+            document.getElementById('allowance-budget-result').innerHTML = `
+                <p><strong>Weekly Allowance Budget:</strong></p>
+                <p>Spending (50%): $${spending.toFixed(2)}</p>
+                <p>Saving (30%): $${saving.toFixed(2)}</p>
+                <p>Giving (20%): $${giving.toFixed(2)}</p>
+            `;
+            document.getElementById('allowance-budget-result').style.display = 'block';
+        }
+
+        // Teen investment simulator
+        function simulateTeenInvestment() {
+            const investment = parseFloat(document.getElementById('teen-investment').value);
+            const years = parseFloat(document.getElementById('teen-years').value);
+
+            // Assuming 7% average annual return
+            const futureValue = investment * Math.pow(1.07, years);
+            const interestEarned = futureValue - investment;
+
+            document.getElementById('teen-investment-result').innerHTML = `
+                <p>Initial Investment: $${investment.toFixed(2)}</p>
+                <p>After ${years} years at 7% return:</p>
+                <p>Future Value: $${futureValue.toFixed(2)}</p>
+                <p>Interest Earned: $${interestEarned.toFixed(2)}</p>
+            `;
+            document.getElementById('teen-investment-result').style.display = 'block';
+        }
+
+        // Savings goal calculator
+        function calculateGoal() {
+            const goal = parseFloat(document.getElementById('goal-amount').value);
+            const current = parseFloat(document.getElementById('current-savings').value);
+            const weeklySave = parseFloat(document.getElementById('weekly-save').value);
+
+            const needed = goal - current;
+
+            if (needed <= 0) {
+                document.getElementById('goal-result').innerHTML =
+                    "<p>You've already reached your goal! 🎉</p>";
+            } else if (weeklySave <= 0) {
+                document.getElementById('goal-result').innerHTML =
+                    "<p>Please enter a positive weekly savings amount.</p>";
+            } else {
+                const weeks = Math.ceil(needed / weeklySave);
+                document.getElementById('goal-result').innerHTML = `
+                    <p>You need to save for ${weeks} weeks to reach your goal</p>
+                    <p>That's about ${Math.floor(weeks / 4)} months and ${weeks % 4} weeks</p>
+                `;
+            }
+
+            document.getElementById('goal-result').style.display = 'block';
+        }
+
+        // Quiz option selection
+        function selectOption(element) {
+            // Remove any existing selections
+            const options = element.parentElement.querySelectorAll('.quiz-option');
+            options.forEach(opt => {
+                opt.style.background = 'white';
+                opt.style.color = 'inherit';
+            });
+
+            // Highlight selected option
+            element.style.background = '#1a4c8c';
+            element.style.color = 'white';
+        }
+
+        // Expand code examples
+        function expandCode(button) {
+            const codeContent = button.parentElement.nextElementSibling;
+            codeContent.classList.toggle('expanded');
+
+            if (codeContent.classList.contains('expanded')) {
+                button.textContent = 'Hide Code';
+            } else {
+                button.textContent = 'Show Code';
+            }
+        }
+    </script>
+
+
+    <!-- ads  -->
+    <div id="ad-anchor-slot"></div>
+
+    <script>
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            alert('Right-click is disabled to protect our content.');
+        });
+
+        // Disable keyboard shortcuts
+        document.onkeydown = function (e) {
+            if (
+                (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c' || e.key === 'i' || e.key === 'j')) ||
+                e.key === 'F12' ||
+                (e.metaKey && e.altKey && e.key === 'i')
+            ) {
+                e.preventDefault();
+                alert('Access to developer tools and source code is disabled to protect our content.');
+                return false;
+            }
+            return true;
+        };
+
+        // Disable text selection
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        // Disable drag and drop
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        window.googletag = window.googletag || { cmd: [] };
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_2', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            if (anchorSlot) {
+                anchorSlot.addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+
+    <script>
+        (function () {
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM fully loaded.");
+
+                function showRewardedAd() {
+                    if (!window.googletag || !googletag.cmd) {
+                        console.error("Google Ad Manager is not properly initialized.");
+                        return;
+                    }
+                    // reward ads
+                    googletag.cmd.push(function () {
+                        try {
+                            const rewardedSlot = googletag
+                                .defineOutOfPageSlot('/22792691312,23308311652/web_nurcodes.com_display_banner_3', googletag.enums.OutOfPageFormat.REWARDED)
+                                .addService(googletag.pubads());
+
+                            googletag.enableServices();
+                            googletag.display(rewardedSlot);
+                            console.log("Attempting to display rewarded ad...");
+
+                            googletag.pubads().addEventListener("rewardedSlotReady", function (evt) {
+                                console.log("Rewarded ad ready.");
+                                evt.makeRewardedVisible();
+                            });
+
+                            googletag.pubads().addEventListener("rewardedSlotClosed", function () {
+                                console.log("Ad closed.");
+                                googletag.destroySlots([rewardedSlot]);
+                            });
+                        } catch (error) {
+                            console.error("Error during ad setup:", error);
+                        }
+                    });
+                }
+
+                // Add 2-second delay before showing the rewarded ad
+                setTimeout(function () {
+                    console.log("2 seconds elapsed, showing rewarded ad...");
+                    showRewardedAd();
+                }, 2000); // 2000 milliseconds = 2 seconds
+            });
+        })();
+    </script>
+
+
+</body>
+
+</html>
