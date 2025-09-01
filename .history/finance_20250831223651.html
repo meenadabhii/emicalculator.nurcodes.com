@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youth Financial Education</title>
+    <title>Adult Financial Education</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <script>
@@ -160,6 +160,7 @@
             max-width: 425px;
             margin: 1rem auto 0.5rem;
             padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
             box-shadow: 0 4px 15px var(--shadow-dark);
             border-radius: 8px;
             position: relative;
@@ -192,8 +193,8 @@
     </style>
 
 
-
-    <style>
+   
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -202,7 +203,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #fdbb2d, #e74c3c);
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -233,7 +234,7 @@
         }
 
         .header {
-            background: linear-gradient(to right, #e74c3c, #c0392b);
+            background: linear-gradient(to right, #3498db, #2980b9);
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -306,7 +307,7 @@
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #e74c3c;
+            border-bottom: 2px solid #3498db;
         }
 
         .calculator {
@@ -350,7 +351,7 @@
 
         .calc-result {
             grid-column: span 2;
-            background: #e74c3c;
+            background: #2c3e50;
             color: white;
             padding: 20px;
             border-radius: 8px;
@@ -403,21 +404,29 @@
         }
 
         .option.selected {
-            border-color: #e74c3c;
-            background: #fbebeb;
+            border-color: #3498db;
+            background: #ebf5fb;
         }
 
-        .interactive-content {
-            background: #e74c3c;
+        .code-example {
+            background: #2c3e50;
             color: white;
             border-radius: 15px;
             padding: 25px;
             margin-bottom: 30px;
+            overflow-x: auto;
         }
 
-        .interactive-content h3 {
+        .code-example h3 {
             margin-bottom: 20px;
             text-align: center;
+        }
+
+        pre {
+            background: #1a252f;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
         }
 
         .footer {
@@ -455,52 +464,16 @@
                 max-width: 300px;
             }
         }
-
-        .game-container {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .game-cell {
-            background: #3498db;
-            height: 60px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .game-cell:hover {
-            background: #2980b9;
-        }
-
-        .game-cell.selected {
-            background: #e74c3c;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <h1>Youth Financial Education</h1>
-            <p>Fun and interactive financial learning for young people</p>
+            <h1>Adult Financial Education</h1>
+            <p>Advanced financial tools and resources for adults</p>
         </div>
-        <!-- ads  -->
+    <!-- ads  -->
         <div id="banner-ad" class="ads-box" style="min-height: 250px;">
             <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
         </div>
@@ -508,10 +481,14 @@
             <a href="index.html" class="btn btn-primary">
                 <i class="fas fa-home"></i> Home
             </a>
-            <a href="Savings.html" class="btn btn-primary">
-                <i class="fas fa-chart-line"></i> Savings
+            <a href="fin1.html" class="btn btn-primary">
+                <i class="fas fa-chart-line"></i> Finance
+            </a>
+            <a href="fund1.html" class="btn btn-secondary">
+                <i class="fas fa-piggy-bank"></i> FUND
             </a>
         </div>
+
 
         <div class="content">
             <!-- Financial Calculator -->
@@ -519,58 +496,60 @@
                 <h2>Financial Calculators</h2>
 
                 <div class="calculator">
-                    <h3>Allowance Calculator</h3>
+                    <h3>Mortgage Calculator</h3>
                     <div class="calc-form">
                         <div class="form-group">
-                            <label for="allowance">Weekly Allowance ($)</label>
-                            <input type="number" id="allowance" value="10">
+                            <label for="loan-amount">Loan Amount ($)</label>
+                            <input type="number" id="loan-amount" value="300000">
                         </div>
                         <div class="form-group">
-                            <label for="save-percent">Save Percentage (%)</label>
-                            <input type="number" id="save-percent" value="20">
+                            <label for="interest-rate">Interest Rate (%)</label>
+                            <input type="number" id="interest-rate" value="4.5" step="0.1">
                         </div>
                         <div class="form-group">
-                            <label for="spend-percent">Spend Percentage (%)</label>
-                            <input type="number" id="spend-percent" value="50">
+                            <label for="loan-term">Loan Term (Years)</label>
+                            <input type="number" id="loan-term" value="30">
                         </div>
                         <div class="form-group">
-                            <label for="weeks">Number of Weeks</label>
-                            <input type="number" id="weeks" value="52">
+                            <label for="down-payment">Down Payment ($)</label>
+                            <input type="number" id="down-payment" value="60000">
                         </div>
-                        <div class="calc-result" id="allowance-result">
-                            Yearly Savings: $104.00
+                        <div class="calc-result" id="mortgage-result">
+                            Monthly Payment: $1,520.06
                         </div>
                     </div>
+                </div>
+  <!-- ads units  -->
+
+                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
                 </div>
 
                 <div class="calculator">
-                    <h3>Goal Savings Calculator</h3>
+                    <h3>Retirement Planner</h3>
                     <div class="calc-form">
                         <div class="form-group">
-                            <label for="goal-amount">Goal Amount ($)</label>
-                            <input type="number" id="goal-amount" value="500">
+                            <label for="current-age">Current Age</label>
+                            <input type="number" id="current-age" value="35">
                         </div>
                         <div class="form-group">
-                            <label for="weekly-save">Weekly Savings ($)</label>
-                            <input type="number" id="weekly-save" value="15">
+                            <label for="retirement-age">Retirement Age</label>
+                            <input type="number" id="retirement-age" value="65">
                         </div>
                         <div class="form-group">
-                            <label for="current-save">Current Savings ($)</label>
-                            <input type="number" id="current-save" value="100">
+                            <label for="current-savings">Current Savings ($)</label>
+                            <input type="number" id="current-savings" value="100000">
                         </div>
-                        <div class="calc-result" id="goal-result">
-                            Time to Reach Goal: 27 weeks
+                        <div class="form-group">
+                            <label for="monthly-contribution">Monthly Contribution ($)</label>
+                            <input type="number" id="monthly-contribution" value="500">
+                        </div>
+                        <div class="calc-result" id="retirement-result">
+                            Retirement Savings: $1,203,284.60
                         </div>
                     </div>
                 </div>
             </div>
-
-
-            <!-- ads units  -->
-            <div id="banner-ad" class="ads-box" style="min-height: 250px;">
-                <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
-            </div>
-
 
             <!-- Quiz Section -->
             <div class="section">
@@ -580,98 +559,68 @@
                     <h3>Test Your Financial Knowledge</h3>
 
                     <div class="quiz-question">
-                        <h4>1. What is the best way to manage your allowance?</h4>
+                        <h4>1. What is the primary purpose of diversification in investing?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">Spend it all immediately</div>
-                            <div class="option" onclick="selectOption(this)">Save some, spend some, give some</div>
-                            <div class="option" onclick="selectOption(this)">Hide it under your mattress</div>
-                            <div class="option" onclick="selectOption(this)">Only use it for video games</div>
+                            <div class="option" onclick="selectOption(this)">To maximize returns</div>
+                            <div class="option" onclick="selectOption(this)">To minimize risk</div>
+                            <div class="option" onclick="selectOption(this)">To avoid taxes</div>
+                            <div class="option" onclick="selectOption(this)">To increase liquidity</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
-                        <h4>2. Why is saving money important?</h4>
+                        <h4>2. What does ETF stand for?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">To have money for future goals</div>
-                            <div class="option" onclick="selectOption(this)">To impress your friends</div>
-                            <div class="option" onclick="selectOption(this)">Because parents say so</div>
-                            <div class="option" onclick="selectOption(this)">There's no good reason</div>
+                            <div class="option" onclick="selectOption(this)">Electronic Transfer Fund</div>
+                            <div class="option" onclick="selectOption(this)">Exchange Traded Fund</div>
+                            <div class="option" onclick="selectOption(this)">Equity Trading Fund</div>
+                            <div class="option" onclick="selectOption(this)">Enhanced Tax Fund</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
-                        <h4>3. What is a budget?</h4>
+                        <h4>3. What is compound interest?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">A plan for how to spend your money</div>
-                            <div class="option" onclick="selectOption(this)">A type of bank account</div>
-                            <div class="option" onclick="selectOption(this)">A fancy word for savings</div>
-                            <div class="option" onclick="selectOption(this)">A restriction on spending</div>
+                            <div class="option" onclick="selectOption(this)">Interest on principal only</div>
+                            <div class="option" onclick="selectOption(this)">Interest calculated monthly</div>
+                            <div class="option" onclick="selectOption(this)">Interest on principal plus accumulated
+                                interest</div>
+                            <div class="option" onclick="selectOption(this)">Fixed interest rate</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
-                        <h4>4. What does "interest" mean in savings?</h4>
+                        <h4>4. What is a 401(k) plan?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">Money the bank pays you for keeping your
-                                money with them</div>
-                            <div class="option" onclick="selectOption(this)">How interested you are in saving</div>
-                            <div class="option" onclick="selectOption(this)">A fee for having a savings account</div>
-                            <div class="option" onclick="selectOption(this)">Something boring adults talk about</div>
+                            <div class="option" onclick="selectOption(this)">A government bond</div>
+                            <div class="option" onclick="selectOption(this)">A retirement savings plan sponsored by an
+                                employer</div>
+                            <div class="option" onclick="selectOption(this)">A type of mutual fund</div>
+                            <div class="option" onclick="selectOption(this)">A high-risk investment</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
-                        <h4>5. What is the first thing you should do with money you receive?</h4>
+                        <h4>5. What is the rule of 72 used for?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">Set aside some for saving</div>
-                            <div class="option" onclick="selectOption(this)">Spend it all right away</div>
-                            <div class="option" onclick="selectOption(this)">Compare how much you got to friends</div>
-                            <div class="option" onclick="selectOption(this)">Put it in your pocket and forget about it
-                            </div>
+                            <div class="option" onclick="selectOption(this)">Calculating retirement age</div>
+                            <div class="option" onclick="selectOption(this)">Estimating how long it takes for an
+                                investment to double</div>
+                            <div class="option" onclick="selectOption(this)">Determining asset allocation</div>
+                            <div class="option" onclick="selectOption(this)">Calculating tax liability</div>
                         </div>
                     </div>
 
-                    <button class="btn btn-secondary" onclick="submitQuiz()" style="margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="submitQuiz()" style="margin-top: 20px;">
                         <i class="fas fa-paper-plane"></i> Submit Quiz
                     </button>
                 </div>
             </div>
 
-            <!-- Interactive Content -->
-            <div class="section">
-                <h2>Interactive Learning</h2>
 
-                <div class="interactive-content">
-                    <h3>Savings Goal Game</h3>
-                    <p>Select the right answers to reach your savings goal!</p>
-
-                    <div class="game-container">
-                        <div class="game-board">
-                            <div class="game-cell" onclick="selectGameCell(this)">$1</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">$5</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">$10</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">$20</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">$50</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">Save</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">Spend</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">Share</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">Goal</div>
-                            <div class="game-cell" onclick="selectGameCell(this)">Interest</div>
-                        </div>
-
-                        <div style="margin-top: 20px;">
-                            <button class="btn btn-primary" onclick="checkGame()">
-                                <i class="fas fa-check"></i> Check Answers
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <div class="footer">
-            <p>© 2023 Financial Education Portal | Privacy Policy | Terms of Service</p>
-        </div>
+
     </div>
 
     <script>
@@ -699,82 +648,86 @@
             alert('Quiz submitted! Calculating score...');
             // In a real implementation, this would calculate score and redirect
             setTimeout(() => {
-                alert('Quiz completed! You did great!');
+                alert('Quiz completed! Redirecting to fin1.html...');
+                // window.location.href = 'fin1.html';
             }, 1500);
         }
 
-        // Allowance calculator
-        const allowanceInput = document.getElementById('allowance');
-        const savePercentInput = document.getElementById('save-percent');
-        const spendPercentInput = document.getElementById('spend-percent');
-        const weeksInput = document.getElementById('weeks');
-        const allowanceResultDiv = document.getElementById('allowance-result');
+        // Mortgage calculator
+        const loanAmountInput = document.getElementById('loan-amount');
+        const interestRateInput = document.getElementById('interest-rate');
+        const loanTermInput = document.getElementById('loan-term');
+        const downPaymentInput = document.getElementById('down-payment');
+        const mortgageResultDiv = document.getElementById('mortgage-result');
 
         // Update calculator when inputs change
-        [allowanceInput, savePercentInput, spendPercentInput, weeksInput].forEach(input => {
-            input.addEventListener('input', calculateAllowance);
+        [loanAmountInput, interestRateInput, loanTermInput, downPaymentInput].forEach(input => {
+            input.addEventListener('input', calculateMortgage);
         });
 
-        function calculateAllowance() {
-            const allowance = parseFloat(allowanceInput.value);
-            const savePercent = parseFloat(savePercentInput.value) / 100;
-            const spendPercent = parseFloat(spendPercentInput.value) / 100;
-            const weeks = parseFloat(weeksInput.value);
+        function calculateMortgage() {
+            const loanAmount = parseFloat(loanAmountInput.value);
+            const interestRate = parseFloat(interestRateInput.value) / 100 / 12; // Monthly interest rate
+            const loanTerm = parseFloat(loanTermInput.value) * 12; // Months
+            const downPayment = parseFloat(downPaymentInput.value);
 
-            if (savePercent + spendPercent > 100) {
-                allowanceResultDiv.textContent = "Total percentage cannot exceed 100%";
+            const principal = loanAmount - downPayment;
+
+            if (principal <= 0) {
+                mortgageResultDiv.textContent = "Down payment must be less than loan amount";
                 return;
             }
 
-            const yearlySavings = allowance * savePercent * weeks;
+            // Calculate monthly payment
+            const x = Math.pow(1 + interestRate, loanTerm);
+            const monthlyPayment = (principal * x * interestRate) / (x - 1);
 
             // Update result
-            allowanceResultDiv.textContent = `Yearly Savings: $${yearlySavings.toFixed(2)}`;
+            mortgageResultDiv.textContent = `Monthly Payment: $${monthlyPayment.toFixed(2)}`;
         }
 
-        // Goal calculator
-        const goalAmountInput = document.getElementById('goal-amount');
-        const weeklySaveInput = document.getElementById('weekly-save');
-        const currentSaveInput = document.getElementById('current-save');
-        const goalResultDiv = document.getElementById('goal-result');
+        // Retirement calculator
+        const currentAgeInput = document.getElementById('current-age');
+        const retirementAgeInput = document.getElementById('retirement-age');
+        const currentSavingsInput = document.getElementById('current-savings');
+        const monthlyContributionInput = document.getElementById('monthly-contribution');
+        const retirementResultDiv = document.getElementById('retirement-result');
 
         // Update calculator when inputs change
-        [goalAmountInput, weeklySaveInput, currentSaveInput].forEach(input => {
-            input.addEventListener('input', calculateGoal);
+        [currentAgeInput, retirementAgeInput, currentSavingsInput, monthlyContributionInput].forEach(input => {
+            input.addEventListener('input', calculateRetirement);
         });
 
-        function calculateGoal() {
-            const goalAmount = parseFloat(goalAmountInput.value);
-            const weeklySave = parseFloat(weeklySaveInput.value);
-            const currentSave = parseFloat(currentSaveInput.value);
+        function calculateRetirement() {
+            const currentAge = parseFloat(currentAgeInput.value);
+            const retirementAge = parseFloat(retirementAgeInput.value);
+            const currentSavings = parseFloat(currentSavingsInput.value);
+            const monthlyContribution = parseFloat(monthlyContributionInput.value);
+            const annualReturn = 0.07; // 7% annual return
 
-            if (weeklySave <= 0) {
-                goalResultDiv.textContent = "Weekly savings must be greater than 0";
+            if (retirementAge <= currentAge) {
+                retirementResultDiv.textContent = "Retirement age must be greater than current age";
                 return;
             }
 
-            const remaining = goalAmount - currentSave;
-            const weeksNeeded = Math.ceil(remaining / weeklySave);
+            const yearsToRetirement = retirementAge - currentAge;
+            let futureValue = currentSavings;
+
+            // Calculate future value with monthly contributions
+            for (let i = 0; i < yearsToRetirement; i++) {
+                futureValue = futureValue * (1 + annualReturn) + (monthlyContribution * 12);
+            }
 
             // Update result
-            goalResultDiv.textContent = `Time to Reach Goal: ${weeksNeeded} weeks`;
-        }
-
-        // Game functionality
-        function selectGameCell(element) {
-            element.classList.toggle('selected');
-        }
-
-        function checkGame() {
-            alert('Checking your answers... Great job!');
+            retirementResultDiv.textContent = `Retirement Savings: $${futureValue.toFixed(2)}`;
         }
 
         // Initialize calculators
-        calculateAllowance();
-        calculateGoal();
+        calculateMortgage();
+        calculateRetirement();
     </script>
 
-    <!-- ads  -->
+      <!-- ads  -->
     <div id="ad-anchor-slot"></div>
 
     <script>

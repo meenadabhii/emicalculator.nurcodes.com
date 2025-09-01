@@ -160,6 +160,7 @@
             max-width: 425px;
             margin: 1rem auto 0.5rem;
             padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
             box-shadow: 0 4px 15px var(--shadow-dark);
             border-radius: 8px;
             position: relative;
@@ -198,16 +199,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            background: linear-gradient(135deg, #fdbb2d, #e74c3c);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
             padding: 20px;
-            color: #333;
         }
 
         @keyframes gradientBG {
@@ -228,94 +228,42 @@
             max-width: 1200px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .header {
-            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            background: linear-gradient(to right, #e74c3c, #c0392b);
             color: white;
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
         }
 
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            position: relative;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         .header p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .character {
-            position: absolute;
-            bottom: 0;
-            right: 30px;
-            font-size: 120px;
-            opacity: 0.8;
-            transform: translateY(15px);
-            animation: bounce 2s infinite alternate;
-        }
-
-        @keyframes bounce {
-            from {
-                transform: translateY(15px);
-            }
-
-            to {
-                transform: translateY(-5px);
-            }
         }
 
         .nav-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 25px;
+            padding: 20px;
             background: #f8f9fa;
             flex-wrap: wrap;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .btn {
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -323,199 +271,162 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            min-width: 180px;
+            min-width: 150px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
-            background: linear-gradient(to right, #42e695 0%, #3bb2b8 100%);
+            background: linear-gradient(to right, #3498db, #2980b9);
             color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(to right, #2980b9, #1c6ea4);
+            transform: translateY(-3px);
         }
 
         .btn-secondary {
-            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+            background: linear-gradient(to right, #e74c3c, #c0392b);
             color: white;
         }
 
         .btn-secondary:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(to right, #c0392b, #a23526);
+            transform: translateY(-3px);
         }
 
         .content {
-            padding: 40px;
+            padding: 30px;
         }
 
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .section h2 {
             color: #2c3e50;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #6a11cb;
-            font-size: 2.2rem;
-            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e74c3c;
         }
 
         .calculator {
-            background: linear-gradient(to right, #fdfcfb 0%, #e2d1c3 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .calculator:hover {
-            transform: translateY(-5px);
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
         }
 
         .calculator h3 {
             color: #2c3e50;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
-            font-size: 1.8rem;
         }
 
         .calc-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 15px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             color: #2c3e50;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border: 2px solid #e9ecef;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus {
-            border-color: #6a11cb;
-            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
-            outline: none;
+            border-radius: 8px;
+            font-size: 1rem;
         }
 
         .calc-result {
             grid-column: span 2;
-            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            background: #e74c3c;
             color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
             text-align: center;
-            font-size: 1.4rem;
-            font-weight: 600;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
         }
 
         .quiz-container {
-            background: linear-gradient(to right, #fdfbfb 0%, #ebedee 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
         }
 
         .quiz-container h3 {
             color: #2c3e50;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
-            font-size: 1.8rem;
         }
 
         .quiz-question {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 2px dashed #e9ecef;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
         }
 
         .quiz-question h4 {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #2c3e50;
-            font-size: 1.3rem;
         }
 
         .options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .option {
-            padding: 15px;
-            background: white;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
             gap: 10px;
         }
 
+        .option {
+            padding: 12px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
         .option:hover {
-            background: #f8f9fa;
-            transform: translateY(-3px);
+            background: #e9ecef;
         }
 
         .option.selected {
-            border-color: #42e695;
-            background: #f0fffa;
-            box-shadow: 0 5px 15px rgba(66, 230, 149, 0.1);
-        }
-
-        .option i {
-            font-size: 1.5rem;
-            color: #42e695;
+            border-color: #e74c3c;
+            background: #fbebeb;
         }
 
         .interactive-content {
-            background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+            background: #e74c3c;
             color: white;
-            border-radius: 20px;
-            padding: 35px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
         }
 
         .interactive-content h3 {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
-            font-size: 1.8rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .footer {
-            background: #2c3e50;
-            padding: 30px;
-            color: #ecf0f1;
-            font-size: 1rem;
+            background: #f8f9fa;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
             text-align: center;
-            border-top: 5px solid #6a11cb;
         }
 
         @media (max-width: 768px) {
@@ -528,19 +439,11 @@
             .calc-result {
                 grid-column: span 1;
             }
-
-            .character {
-                display: none;
-            }
         }
 
         @media (max-width: 600px) {
             .header h1 {
-                font-size: 2.2rem;
-            }
-
-            .header p {
-                font-size: 1.1rem;
+                font-size: 2rem;
             }
 
             .nav-buttons {
@@ -552,36 +455,27 @@
                 width: 100%;
                 max-width: 300px;
             }
-
-            .content {
-                padding: 25px;
-            }
-
-            .section h2 {
-                font-size: 1.8rem;
-            }
         }
 
         .game-container {
             background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-top: 25px;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .game-board {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 15px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .game-cell {
-            background: linear-gradient(to right, #42e695 0%, #3bb2b8 100%);
-            height: 70px;
-            border-radius: 12px;
+            background: #3498db;
+            height: 60px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -589,73 +483,14 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .game-cell:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background: #2980b9;
         }
 
         .game-cell.selected {
-            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-            transform: scale(1.1);
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 20px;
-            background: #ecf0f1;
-            border-radius: 10px;
-            margin: 30px 0;
-            overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(to right, #42e695 0%, #3bb2b8 100%);
-            border-radius: 10px;
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 8px 15px;
-            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            margin: 0 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .reward {
-            text-align: center;
-            margin-top: 30px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .reward i {
-            font-size: 4rem;
-            color: #ffd700;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+            background: #e74c3c;
         }
     </style>
 </head>
@@ -663,74 +498,66 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Youth Financial Adventure</h1>
-            <p>Learn about money in a fun way! Play games, take quizzes, and become a money master!</p>
-            <div class="character">🧒</div>
+            <h1>Youth Financial Education</h1>
+            <p>Fun and interactive financial learning for young people</p>
         </div>
         <!-- ads  -->
         <div id="banner-ad" class="ads-box" style="min-height: 250px;">
             <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
         </div>
         <div class="nav-buttons">
-            <a href="finance.html" class="btn btn-primary">
+            <a href="index.html" class="btn btn-primary">
                 <i class="fas fa-home"></i> Home
             </a>
-            <a href="fin1.html" class="btn btn-primary">
-                <i class="fas fa-chart-line"></i> Finance
-            </a>
-            <a href="fund1.html" class="btn btn-secondary">
-                <i class="fas fa-piggy-bank"></i> FUND
+            <a href="Savings.html" class="btn btn-primary">
+                <i class="fas fa-chart-line"></i> Savings
             </a>
         </div>
 
         <div class="content">
             <!-- Financial Calculator -->
             <div class="section">
-                <h2>Fun Financial Calculators</h2>
+                <h2>Financial Calculators</h2>
 
                 <div class="calculator">
                     <h3>Allowance Calculator</h3>
                     <div class="calc-form">
                         <div class="form-group">
-                            <label for="allowance"><i class="fas fa-money-bill-wave"></i> Weekly Allowance ($)</label>
-                            <input type="number" id="allowance" value="10" min="0" max="100">
+                            <label for="allowance">Weekly Allowance ($)</label>
+                            <input type="number" id="allowance" value="10">
                         </div>
                         <div class="form-group">
-                            <label for="save-percent"><i class="fas fa-piggy-bank"></i> Save Percentage (%)</label>
-                            <input type="number" id="save-percent" value="20" min="0" max="100">
+                            <label for="save-percent">Save Percentage (%)</label>
+                            <input type="number" id="save-percent" value="20">
                         </div>
                         <div class="form-group">
-                            <label for="spend-percent"><i class="fas fa-shopping-cart"></i> Spend Percentage (%)</label>
-                            <input type="number" id="spend-percent" value="50" min="0" max="100">
+                            <label for="spend-percent">Spend Percentage (%)</label>
+                            <input type="number" id="spend-percent" value="50">
                         </div>
                         <div class="form-group">
-                            <label for="weeks"><i class="fas fa-calendar-alt"></i> Number of Weeks</label>
-                            <input type="number" id="weeks" value="52" min="1" max="100">
+                            <label for="weeks">Number of Weeks</label>
+                            <input type="number" id="weeks" value="52">
                         </div>
                         <div class="calc-result" id="allowance-result">
                             Yearly Savings: $104.00
                         </div>
                     </div>
                 </div>
-                <!-- ads units  -->
-                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
-                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
-                </div>
-
+               
                 <div class="calculator">
                     <h3>Goal Savings Calculator</h3>
                     <div class="calc-form">
                         <div class="form-group">
-                            <label for="goal-amount"><i class="fas fa-bullseye"></i> Goal Amount ($)</label>
-                            <input type="number" id="goal-amount" value="500" min="1">
+                            <label for="goal-amount">Goal Amount ($)</label>
+                            <input type="number" id="goal-amount" value="500">
                         </div>
                         <div class="form-group">
-                            <label for="weekly-save"><i class="fas fa-coins"></i> Weekly Savings ($)</label>
-                            <input type="number" id="weekly-save" value="15" min="1">
+                            <label for="weekly-save">Weekly Savings ($)</label>
+                            <input type="number" id="weekly-save" value="15">
                         </div>
                         <div class="form-group">
-                            <label for="current-save"><i class="fas fa-wallet"></i> Current Savings ($)</label>
-                            <input type="number" id="current-save" value="100" min="0">
+                            <label for="current-save">Current Savings ($)</label>
+                            <input type="number" id="current-save" value="100">
                         </div>
                         <div class="calc-result" id="goal-result">
                             Time to Reach Goal: 27 weeks
@@ -739,104 +566,68 @@
                 </div>
             </div>
 
+
+             <!-- ads units  -->
+                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+                </div>
+
+
             <!-- Quiz Section -->
             <div class="section">
-                <h2>Financial Knowledge Quest</h2>
+                <h2>Financial Knowledge Quiz</h2>
 
                 <div class="quiz-container">
-                    <h3>Test Your Money Knowledge</h3>
-
-                    <div class="progress-container">
-                        <div class="progress-bar" id="quiz-progress"></div>
-                    </div>
+                    <h3>Test Your Financial Knowledge</h3>
 
                     <div class="quiz-question">
                         <h4>1. What is the best way to manage your allowance?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Spend it all immediately
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-check-circle"></i> Save some, spend some, give some
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Hide it under your mattress
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Only use it for video games
-                            </div>
+                            <div class="option" onclick="selectOption(this)">Spend it all immediately</div>
+                            <div class="option" onclick="selectOption(this)">Save some, spend some, give some</div>
+                            <div class="option" onclick="selectOption(this)">Hide it under your mattress</div>
+                            <div class="option" onclick="selectOption(this)">Only use it for video games</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
                         <h4>2. Why is saving money important?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-check-circle"></i> To have money for future goals
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> To impress your friends
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Because parents say so
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> There's no good reason
-                            </div>
+                            <div class="option" onclick="selectOption(this)">To have money for future goals</div>
+                            <div class="option" onclick="selectOption(this)">To impress your friends</div>
+                            <div class="option" onclick="selectOption(this)">Because parents say so</div>
+                            <div class="option" onclick="selectOption(this)">There's no good reason</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
                         <h4>3. What is a budget?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-check-circle"></i> A plan for how to spend your money
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> A type of bank account
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> A fancy word for savings
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> A restriction on spending
-                            </div>
+                            <div class="option" onclick="selectOption(this)">A plan for how to spend your money</div>
+                            <div class="option" onclick="selectOption(this)">A type of bank account</div>
+                            <div class="option" onclick="selectOption(this)">A fancy word for savings</div>
+                            <div class="option" onclick="selectOption(this)">A restriction on spending</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
                         <h4>4. What does "interest" mean in savings?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-check-circle"></i> Money the bank pays you for keeping your money with
-                                them
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> How interested you are in saving
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> A fee for having a savings account
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Something boring adults talk about
-                            </div>
+                            <div class="option" onclick="selectOption(this)">Money the bank pays you for keeping your
+                                money with them</div>
+                            <div class="option" onclick="selectOption(this)">How interested you are in saving</div>
+                            <div class="option" onclick="selectOption(this)">A fee for having a savings account</div>
+                            <div class="option" onclick="selectOption(this)">Something boring adults talk about</div>
                         </div>
                     </div>
 
                     <div class="quiz-question">
                         <h4>5. What is the first thing you should do with money you receive?</h4>
                         <div class="options">
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-check-circle"></i> Set aside some for saving
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Spend it all right away
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Compare how much you got to friends
-                            </div>
-                            <div class="option" onclick="selectOption(this)">
-                                <i class="fas fa-times-circle"></i> Put it in your pocket and forget about it
+                            <div class="option" onclick="selectOption(this)">Set aside some for saving</div>
+                            <div class="option" onclick="selectOption(this)">Spend it all right away</div>
+                            <div class="option" onclick="selectOption(this)">Compare how much you got to friends</div>
+                            <div class="option" onclick="selectOption(this)">Put it in your pocket and forget about it
                             </div>
                         </div>
                     </div>
@@ -844,27 +635,16 @@
                     <button class="btn btn-secondary" onclick="submitQuiz()" style="margin-top: 20px;">
                         <i class="fas fa-paper-plane"></i> Submit Quiz
                     </button>
-
-                    <div class="reward">
-                        <i class="fas fa-trophy"></i>
-                        <p>Earn badges by completing quizzes!</p>
-                        <div>
-                            <span class="badge">Money Master</span>
-                            <span class="badge">Savings Star</span>
-                            <span class="badge">Budget Boss</span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <!-- Interactive Content -->
             <div class="section">
-                <h2>Interactive Learning Games</h2>
+                <h2>Interactive Learning</h2>
 
                 <div class="interactive-content">
-                    <h3>Savings Goal Adventure</h3>
-                    <p>Select the right answers to reach your savings goal! Each correct answer moves you closer to the
-                        treasure!</p>
+                    <h3>Savings Goal Game</h3>
+                    <p>Select the right answers to reach your savings goal!</p>
 
                     <div class="game-container">
                         <div class="game-board">
@@ -880,12 +660,9 @@
                             <div class="game-cell" onclick="selectGameCell(this)">Interest</div>
                         </div>
 
-                        <div style="margin-top: 30px;">
+                        <div style="margin-top: 20px;">
                             <button class="btn btn-primary" onclick="checkGame()">
                                 <i class="fas fa-check"></i> Check Answers
-                            </button>
-                            <button class="btn btn-secondary" onclick="resetGame()">
-                                <i class="fas fa-redo"></i> Start Over
                             </button>
                         </div>
                     </div>
@@ -895,13 +672,16 @@
 
         <div class="footer">
             <p>© 2023 Financial Education Portal | Privacy Policy | Terms of Service</p>
-            <p>Designed especially for young learners to develop good money habits early!</p>
         </div>
     </div>
 
     <script>
         // Navigation function
-
+        function navigateTo(page) {
+            alert(`Navigating to ${page}`);
+            // In a real implementation, this would be:
+            // window.location.href = page;
+        }
 
         // Quiz selection
         function selectOption(element) {
@@ -913,39 +693,14 @@
 
             // Add selected class to clicked element
             element.classList.add('selected');
-
-            // Update progress bar
-            updateProgress();
-        }
-
-        // Update progress bar
-        function updateProgress() {
-            const questions = document.querySelectorAll('.quiz-question');
-            let answered = 0;
-
-            questions.forEach(question => {
-                const options = question.querySelectorAll('.option');
-                let hasSelected = false;
-
-                options.forEach(option => {
-                    if (option.classList.contains('selected')) {
-                        hasSelected = true;
-                    }
-                });
-
-                if (hasSelected) answered++;
-            });
-
-            const progress = (answered / questions.length) * 100;
-            document.getElementById('quiz-progress').style.width = `${progress}%`;
         }
 
         // Quiz submission
         function submitQuiz() {
-            alert('Quiz submitted! Calculating your score...');
+            alert('Quiz submitted! Calculating score...');
             // In a real implementation, this would calculate score and redirect
             setTimeout(() => {
-                alert('Awesome! You scored 100%! You\'re a Money Master!');
+                alert('Quiz completed! You did great!');
             }, 1500);
         }
 
@@ -973,15 +728,9 @@
             }
 
             const yearlySavings = allowance * savePercent * weeks;
-            const yearlySpending = allowance * spendPercent * weeks;
-            const yearlySharing = allowance * (1 - (savePercent + spendPercent)) * weeks;
 
             // Update result
-            allowanceResultDiv.innerHTML = `
-                Yearly Savings: $${yearlySavings.toFixed(2)}<br>
-                Yearly Spending: $${yearlySpending.toFixed(2)}<br>
-                Yearly Sharing: $${yearlySharing.toFixed(2)}
-            `;
+            allowanceResultDiv.textContent = `Yearly Savings: $${yearlySavings.toFixed(2)}`;
         }
 
         // Goal calculator
@@ -1018,20 +767,7 @@
         }
 
         function checkGame() {
-            const selectedCells = document.querySelectorAll('.game-cell.selected');
-            if (selectedCells.length >= 3) {
-                alert('Great job! You selected the right answers! You earned 50 coins!');
-            } else {
-                alert('Try selecting a few more answers to complete the challenge!');
-            }
-        }
-
-        function resetGame() {
-            const cells = document.querySelectorAll('.game-cell');
-            cells.forEach(cell => {
-                cell.classList.remove('selected');
-            });
-            alert('Game reset! Try again!');
+            alert('Checking your answers... Great job!');
         }
 
         // Initialize calculators

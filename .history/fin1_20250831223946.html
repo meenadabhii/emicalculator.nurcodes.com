@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Savings Strategies</title>
+    <title>Advanced Financial Strategies - FIN1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -160,6 +160,7 @@
             max-width: 425px;
             margin: 1rem auto 0.5rem;
             padding: 0.5rem;
+            background: hsl(240, 6%, 97%);
             box-shadow: 0 4px 15px var(--shadow-dark);
             border-radius: 8px;
             position: relative;
@@ -192,8 +193,6 @@
     </style>
 
 
-
-
     <style>
         * {
             margin: 0;
@@ -203,7 +202,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0c2461 0%, #1e3799 30%, #4a69bd 70%, #6a89cc 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
@@ -248,7 +247,7 @@
         }
 
         .header {
-            background: linear-gradient(to right, #0c2461 0%, #4a69bd 100%);
+            background: linear-gradient(to right, #2c3e50 0%, #4ca1af 100%);
             color: white;
             padding: 40px 20px;
             text-align: center;
@@ -329,7 +328,6 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
-            border: 1px solid #e0e0e0;
         }
 
         .card:hover {
@@ -337,7 +335,7 @@
         }
 
         .card-header {
-            background: linear-gradient(to right, #0c2461, #4a69bd);
+            background: linear-gradient(to right, #3498db, #2980b9);
             color: white;
             padding: 20px;
             text-align: center;
@@ -369,8 +367,6 @@
             background: #f8f9fa;
             padding: 15px;
             text-align: center;
-            font-weight: 600;
-            color: #4a69bd;
         }
 
         .calculator {
@@ -423,7 +419,7 @@
 
         .calc-result {
             grid-column: span 2;
-            background: linear-gradient(to right, #0c2461 0%, #4a69bd 100%);
+            background: linear-gradient(to right, #2c3e50 0%, #4ca1af 100%);
             color: white;
             padding: 25px;
             border-radius: 15px;
@@ -491,7 +487,7 @@
         }
 
         .info-table th {
-            background: linear-gradient(to right, #0c2461, #4a69bd);
+            background: linear-gradient(to right, #3498db, #2980b9);
             color: white;
             font-weight: 600;
         }
@@ -503,400 +499,303 @@
         .info-table tr:hover {
             background-color: #ebf5fb;
         }
-
-        .world-map {
-            width: 100%;
-            height: 300px;
-            background: url('https://images.unsplash.com/photo-1580261450046-d0a30080dc9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1790&q=80') center/cover no-repeat;
-            border-radius: 15px;
-            margin: 30px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .world-map::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(12, 36, 97, 0.7), rgba(74, 105, 189, 0.7));
-        }
-
-        .world-map-content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .world-map-content h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .world-map-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .quote {
-            font-style: italic;
-            padding: 20px;
-            border-left: 5px solid #4a69bd;
-            background: #f8f9fa;
-            border-radius: 10px;
-            margin: 25px 0;
-            font-size: 1.2rem;
-        }
-
-        .quote-author {
-            text-align: right;
-            font-weight: 600;
-            color: #4a69bd;
-            margin-top: 10px;
-        }
-
-        .stat-box {
-            background: linear-gradient(to right, #0c2461, #4a69bd);
-            color: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            margin: 20px 0;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <h1>Global Savings Strategies</h1>
-            <p>Discover savings approaches from around the world to build your financial future</p>
+            <h1>Advanced Financial Strategies</h1>
+            <p>Expert insights and tools for financial growth and security</p>
+
+            <!-- ads  -->
+            <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
+            </div>
             <a href="index.html" class="back-button">
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
+
         </div>
-        <!-- ads  -->
-        <div id="banner-ad" class="ads-box" style="min-height: 250px;">
-            <div id="ad-slot-1" class="ad-container" style="display: block !important;"></div>
-        </div>
+
         <div class="content">
-            <!-- World Map Section -->
-            <div class="world-map">
-                <div class="world-map-content">
-                    <h3>International Savings Wisdom</h3>
-                    <p>Exploring how different cultures approach saving and financial security</p>
-                </div>
-            </div>
-
-            <!-- Savings Statistics -->
-            <div class="card-container">
-                <div class="stat-box">
-                    <div class="stat-number">17.3%</div>
-                    <div class="stat-label">Average Savings Rate in Switzerland</div>
-                </div>
-
-                <div class="stat-box">
-                    <div class="stat-number">34%</div>
-                    <div class="stat-label">of Chinese Income Saved Monthly</div>
-                </div>
-
-                <!-- ads units  -->
-                <div id="banner-ad" class="ads-box" style="min-height: 250px;">
-                    <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
-                </div>
-
-                <div class="stat-box">
-                    <div class="stat-number">$6,500</div>
-                    <div class="stat-label">Average American Emergency Savings Goal</div>
-                </div>
-            </div>
-
-            <!-- Cultural Savings Approaches -->
+            <!-- Investment Strategies -->
             <div class="section">
-                <h2>Cultural Savings Approaches</h2>
-                <p>Different cultures have developed unique approaches to saving money throughout history.</p>
+                <h2>Investment Strategies</h2>
+                <p>Maximize your returns with these proven investment approaches tailored for long-term growth and
+                    stability.</p>
 
                 <div class="card-container">
                     <div class="card">
-                        <div class="card-header">Kakeibo (Japan)</div>
+                        <div class="card-header">Diversification</div>
                         <div class="card-body">
-                            <p>The Japanese art of saving money through mindful spending and budgeting.</p>
+                            <p>Spread your investments across different asset classes to reduce risk.</p>
                             <ul>
-                                <li><i class="fas fa-check-circle"></i> Monthly budgeting system</li>
-                                <li><i class="fas fa-check-circle"></i> Four questions before purchases</li>
-                                <li><i class="fas fa-check-circle"></i> Focus on mindfulness</li>
-                                <li><i class="fas fa-check-circle"></i> Writing down all expenses</li>
+                                <li><i class="fas fa-check-circle"></i> Stocks across sectors</li>
+                                <li><i class="fas fa-check-circle"></i> Bonds with varying maturities</li>
+                                <li><i class="fas fa-check-circle"></i> Real estate investments</li>
+                                <li><i class="fas fa-check-circle"></i> International exposure</li>
                             </ul>
                         </div>
                         <div class="card-footer">
-                            Mindfulness in Spending
+                            Risk Management
+                        </div>
+                    </div>
+                    <!-- ads units  -->
+
+                    <div id="banner-ad" class="ads-box" style="min-height: 250px;">
+                        <div id="ad-slot-2" class="ad-container" style="display: block !important;"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">Growth Investing</div>
+                        <div class="card-body">
+                            <p>Focus on companies that offer strong potential for earnings growth.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Technology sector focus</li>
+                                <li><i class="fas fa-check-circle"></i> Emerging market opportunities</li>
+                                <li><i class="fas fa-check-circle"></i> Innovation-driven companies</li>
+                                <li><i class="fas fa-check-circle"></i> Higher risk, higher reward</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            Long-Term Growth
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card-header">Rotating Savings (Global)</div>
+                        <div class="card-header">Value Investing</div>
                         <div class="card-body">
-                            <p>Informal savings groups where members contribute to and receive lump sums.</p>
+                            <p>Identify undervalued stocks that trade for less than their intrinsic value.</p>
                             <ul>
-                                <li><i class="fas fa-check-circle"></i> Known as "tandas" in Mexico</li>
-                                <li><i class="fas fa-check-circle"></i> "Susu" in West Africa</li>
-                                <li><i class="fas fa-check-circle"></i> "Paluwagan" in Philippines</li>
-                                <li><i class="fas fa-check-circle"></i> Community-based trust system</li>
+                                <li><i class="fas fa-check-circle"></i> Fundamental analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Margin of safety</li>
+                                <li><i class="fas fa-check-circle"></i> Contrarian approach</li>
+                                <li><i class="fas fa-check-circle"></i> Patient capital</li>
                             </ul>
                         </div>
                         <div class="card-footer">
-                            Community Savings
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">Frugality (Nordic Countries)</div>
-                        <div class="card-body">
-                            <p>The Nordic approach to lagom (just the right amount) and mindful consumption.</p>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Value experiences over possessions</li>
-                                <li><i class="fas fa-check-circle"></i> High environmental consciousness</li>
-                                <li><i class="fas fa-check-circle"></i> Quality over quantity</li>
-                                <li><i class="fas fa-check-circle"></i> Strong social safety nets</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            Balanced Living
+                            Undervalued Opportunities
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Savings Calculator -->
+            <!-- Retirement Planning -->
             <div class="section">
-                <h2>International Savings Calculator</h2>
-                <p>See how different savings rates from around the world can impact your financial future.</p>
+                <h2>Retirement Planning</h2>
+                <p>Ensure a comfortable retirement with these strategic approaches to saving and investing for your
+                    future.</p>
 
                 <div class="calculator">
-                    <h3>Global Savings Comparison</h3>
+                    <h3>Retirement Savings Calculator</h3>
                     <div class="calc-form">
                         <div class="form-group">
-                            <label for="monthly-income">Monthly Income ($)</label>
-                            <input type="number" id="monthly-income" value="3000">
+                            <label for="current-age">Current Age</label>
+                            <input type="number" id="current-age" value="35" min="18" max="65">
                         </div>
                         <div class="form-group">
-                            <label for="country">Select Country Model</label>
-                            <select id="country">
-                                <option value="china">China (34% savings rate)</option>
-                                <option value="switzerland">Switzerland (17.3% savings rate)</option>
-                                <option value="japan">Japan (5% savings rate)</option>
-                                <option value="usa">United States (7.5% savings rate)</option>
-                                <option value="germany">Germany (10.9% savings rate)</option>
-                                <option value="custom">Custom Savings Rate</option>
-                            </select>
-                        </div>
-                        <div class="form-group" id="custom-rate-group" style="display: none;">
-                            <label for="custom-rate">Custom Savings Rate (%)</label>
-                            <input type="number" id="custom-rate" value="10">
+                            <label for="retirement-age">Desired Retirement Age</label>
+                            <input type="number" id="retirement-age" value="65" min="40" max="75">
                         </div>
                         <div class="form-group">
-                            <label for="years">Time Period (Years)</label>
-                            <input type="number" id="years" value="10">
+                            <label for="current-savings">Current Retirement Savings ($)</label>
+                            <input type="number" id="current-savings" value="100000">
                         </div>
-                        <div class="calc-result" id="savings-result">
-                            Potential Savings: $122,400
+                        <div class="form-group">
+                            <label for="annual-contribution">Annual Contribution ($)</label>
+                            <input type="number" id="annual-contribution" value="10000">
+                        </div>
+                        <div class="calc-result" id="retirement-result">
+                            Projected Retirement Savings: $1,203,284.60
                         </div>
                     </div>
                 </div>
-
-                <div class="quote">
-                    "Do not save what is left after spending, but spend what is left after saving."
-                    <div class="quote-author">- Warren Buffett, American Investor</div>
-                </div>
-            </div>
-
-            <!-- International Savings Methods -->
-            <div class="section">
-                <h2>Traditional & Modern Savings Methods</h2>
-                <p>Explore various savings techniques from around the world.</p>
 
                 <table class="info-table">
                     <thead>
                         <tr>
-                            <th>Method</th>
-                            <th>Origin</th>
-                            <th>How It Works</th>
-                            <th>Benefits</th>
+                            <th>Account Type</th>
+                            <th>Contribution Limit</th>
+                            <th>Tax Advantage</th>
+                            <th>Withdrawal Rules</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Gold Savings</td>
-                            <td>India/Middle East</td>
-                            <td>Purchasing gold as a store of value</td>
-                            <td>Inflation hedge, portable wealth</td>
+                            <td>401(k)</td>
+                            <td>$22,500</td>
+                            <td>Tax-deferred growth</td>
+                            <td>Penalty before 59½</td>
                         </tr>
                         <tr>
-                            <td>52-Week Challenge</td>
-                            <td>Global</td>
-                            <td>Save increasing amounts each week</td>
-                            <td>Builds habit, gradual increase</td>
+                            <td>IRA</td>
+                            <td>$6,500</td>
+                            <td>Tax-deferred or tax-free</td>
+                            <td>Penalty before 59½</td>
                         </tr>
                         <tr>
-                            <td>Envelope System</td>
-                            <td>United States</td>
-                            <td>Cash budgeting with categories</td>
-                            <td>Visual spending control</td>
+                            <td>Roth IRA</td>
+                            <td>$6,500</td>
+                            <td>Tax-free growth</td>
+                            <td>Contributions anytime</td>
                         </tr>
                         <tr>
-                            <td>Property Investment</td>
-                            <td>China</td>
-                            <td>Real estate as primary savings vehicle</td>
-                            <td>Tangible asset, appreciation</td>
-                        </tr>
-                        <tr>
-                            <td>Automated Transfers</td>
-                            <td>Global</td>
-                            <td>Automatic savings deductions</td>
-                            <td>Consistent, effortless saving</td>
+                            <td>HSA</td>
+                            <td>$3,850</td>
+                            <td>Triple tax advantage</td>
+                            <td>Medical expenses anytime</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Savings Tips from Around the World -->
+            <!-- Tax Optimization -->
             <div class="section">
-                <h2>Global Savings Tips</h2>
-                <p>Wisdom from different cultures to enhance your savings strategy.</p>
+                <h2>Tax Optimization Strategies</h2>
+                <p>Legally minimize your tax burden and keep more of your hard-earned money with these strategies.</p>
 
                 <div class="card-container">
                     <div class="card">
-                        <div class="card-header">Swedish Lagom</div>
+                        <div class="card-header">Tax-Loss Harvesting</div>
                         <div class="card-body">
-                            <p>"Not too little, not too much" - the Swedish approach to balanced spending.</p>
+                            <p>Sell investments at a loss to offset capital gains and reduce taxable income.</p>
                             <ul>
-                                <li><i class="fas fa-lightbulb"></i> Avoid extreme frugality or overspending</li>
-                                <li><i class="fas fa-lightbulb"></i> Find contentment with enough</li>
-                                <li><i class="fas fa-lightbulb"></i> Sustainability-focused consumption</li>
+                                <li><i class="fas fa-check-circle"></i> Offset up to $3,000 in ordinary income</li>
+                                <li><i class="fas fa-check-circle"></i> Carry forward unused losses</li>
+                                <li><i class="fas fa-check-circle"></i> Maintain similar market exposure</li>
+                                <li><i class="fas fa-check-circle"></i> Avoid wash sale rules</li>
                             </ul>
+                        </div>
+                        <div class="card-footer">
+                            Capital Gains Management
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card-header">Italian Frugality</div>
+                        <div class="card-header">Asset Location</div>
                         <div class="card-body">
-                            <p>Traditional Italian approaches to saving through mindful consumption.</p>
+                            <p>Place investments in the most tax-efficient accounts based on their characteristics.</p>
                             <ul>
-                                <li><i class="fas fa-lightbulb"></i> Quality over quantity in purchases</li>
-                                <li><i class="fas fa-lightbulb"></i> Repurpose and repair items</li>
-                                <li><i class="fas fa-lightbulb"></i> Home cooking and seasonal eating</li>
+                                <li><i class="fas fa-check-circle"></i> Bonds in tax-deferred accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Stocks in taxable accounts</li>
+                                <li><i class="fas fa-check-circle"></i> REITs in tax-advantaged accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Tax-efficient funds in taxable accounts</li>
                             </ul>
+                        </div>
+                        <div class="card-footer">
+                            Tax Efficiency
                         </div>
                     </div>
 
                     <div class="card">
-                        <div class="card-header">Singaporean CPF</div>
+                        <div class="card-header">Retirement Contributions</div>
                         <div class="card-body">
-                            <p>Singapore's Central Provident Fund model for forced savings.</p>
+                            <p>Maximize contributions to tax-advantaged retirement accounts.</p>
                             <ul>
-                                <li><i class="fas fa-lightbulb"></i> Mandatory savings scheme</li>
-                                <li><i class="fas fa-lightbulb"></i> Multiple accounts for different goals</li>
-                                <li><i class="fas fa-lightbulb"></i> Long-term financial security focus</li>
+                                <li><i class="fas fa-check-circle"></i> 401(k) employer match</li>
+                                <li><i class="fas fa-check-circle"></i> IRA deductions</li>
+                                <li><i class="fas fa-check-circle"></i> Health Savings Accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Catch-up contributions at 50+</li>
                             </ul>
+                        </div>
+                        <div class="card-footer">
+                            Tax-Advantaged Growth
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="quote">
-                    "The easiest way to save money is to not have time to spend it."
-                    <div class="quote-author">- Finnish Proverb</div>
-                </div>
+            <!-- Estate Planning -->
+            <div class="section">
+                <h2>Estate Planning Essentials</h2>
+                <p>Protect your assets and ensure your wishes are carried out with proper estate planning.</p>
+
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Purpose</th>
+                            <th>Considerations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Will</td>
+                            <td>Distribute assets after death</td>
+                            <td>Name executor and guardians</td>
+                        </tr>
+                        <tr>
+                            <td>Trust</td>
+                            <td>Avoid probate, control distributions</td>
+                            <td>Revocable vs. irrevocable</td>
+                        </tr>
+                        <tr>
+                            <td>Power of Attorney</td>
+                            <td>Manage finances if incapacitated</td>
+                            <td>Durable vs. springing</td>
+                        </tr>
+                        <tr>
+                            <td>Healthcare Directive</td>
+                            <td>Medical decisions if unable</td>
+                            <td>End-of-life preferences</td>
+                        </tr>
+                        <tr>
+                            <td>Beneficiary Designations</td>
+                            <td>Transfer assets outside probate</td>
+                            <td>Review regularly</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="footer">
             <p>© 2023 Financial Education Portal | Privacy Policy | Terms of Service</p>
-            <p>Global Savings Strategies - Learning from International Approaches</p>
+            <p>FIN1 - Advanced Financial Strategies</p>
         </div>
     </div>
 
     <script>
-        // Savings calculator
-        const monthlyIncomeInput = document.getElementById('monthly-income');
-        const countrySelect = document.getElementById('country');
-        const customRateGroup = document.getElementById('custom-rate-group');
-        const customRateInput = document.getElementById('custom-rate');
-        const yearsInput = document.getElementById('years');
-        const savingsResultDiv = document.getElementById('savings-result');
-
-        // Country savings rates (as decimals)
-        const countryRates = {
-            china: 0.34,
-            switzerland: 0.173,
-            japan: 0.05,
-            usa: 0.075,
-            germany: 0.109,
-            custom: 0.10
-        };
+        // Retirement calculator
+        const currentAgeInput = document.getElementById('current-age');
+        const retirementAgeInput = document.getElementById('retirement-age');
+        const currentSavingsInput = document.getElementById('current-savings');
+        const annualContributionInput = document.getElementById('annual-contribution');
+        const retirementResultDiv = document.getElementById('retirement-result');
 
         // Update calculator when inputs change
-        [monthlyIncomeInput, countrySelect, customRateInput, yearsInput].forEach(input => {
-            input.addEventListener('input', calculateSavings);
+        [currentAgeInput, retirementAgeInput, currentSavingsInput, annualContributionInput].forEach(input => {
+            input.addEventListener('input', calculateRetirement);
         });
 
-        // Show/hide custom rate input
-        countrySelect.addEventListener('change', function () {
-            if (this.value === 'custom') {
-                customRateGroup.style.display = 'block';
-            } else {
-                customRateGroup.style.display = 'none';
-            }
-            calculateSavings();
-        });
+        function calculateRetirement() {
+            const currentAge = parseFloat(currentAgeInput.value);
+            const retirementAge = parseFloat(retirementAgeInput.value);
+            const currentSavings = parseFloat(currentSavingsInput.value);
+            const annualContribution = parseFloat(annualContributionInput.value);
+            const annualReturn = 0.07; // 7% annual return
 
-        function calculateSavings() {
-            const monthlyIncome = parseFloat(monthlyIncomeInput.value);
-            const years = parseFloat(yearsInput.value);
-
-            // Get savings rate based on selection
-            let rate;
-            if (countrySelect.value === 'custom') {
-                rate = parseFloat(customRateInput.value) / 100;
-            } else {
-                rate = countryRates[countrySelect.value];
+            if (retirementAge <= currentAge) {
+                retirementResultDiv.textContent = "Retirement age must be greater than current age";
+                return;
             }
 
-            const monthlySavings = monthlyIncome * rate;
-            const yearlySavings = monthlySavings * 12;
+            const yearsToRetirement = retirementAge - currentAge;
+            let futureValue = currentSavings;
 
-            // Calculate with compound interest (5% annual return)
-            const annualReturn = 0.05;
-            let totalSavings = 0;
-
-            for (let i = 0; i < years; i++) {
-                totalSavings = (totalSavings + yearlySavings) * (1 + annualReturn);
+            // Calculate future value with annual contributions
+            for (let i = 0; i < yearsToRetirement; i++) {
+                futureValue = futureValue * (1 + annualReturn) + annualContribution;
             }
 
             // Update result
-            savingsResultDiv.textContent = `Potential Savings: $${totalSavings.toFixed(2)}`;
+            retirementResultDiv.textContent = `Projected Retirement Savings: $${futureValue.toFixed(2)}`;
         }
 
         // Initialize calculator
-        calculateSavings();
+        calculateRetirement();
     </script>
-
 
     <!-- ads  -->
     <div id="ad-anchor-slot"></div>
@@ -945,8 +844,7 @@
             googletag.enableServices();
         });
     </script>
-
-
+    
     <script>
         (function () {
             document.addEventListener("DOMContentLoaded", function () {
@@ -991,7 +889,6 @@
             });
         })();
     </script>
-
 
 </body>
 
